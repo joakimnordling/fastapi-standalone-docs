@@ -7,7 +7,7 @@ license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "IOXIO Ltd" }]
 requires-python = ">=3.10"
-dependencies = ["fastapi>=0.109.1,<1"]
+dependencies = ["fastapi>=0.133.0,<1"]
 keywords = ["fastapi", "swagger", "swagger-ui", "redoc", "openapi", "offline"]
 classifiers = [
     "Framework :: FastAPI",
@@ -41,7 +41,7 @@ source-include = ["tests/**"]
 dev = [
     "pytest>=8.3.4",
     "mypy>=1.15.0",
-    "httpx>=0.28.1",
+    "httpx2>=2",
     "invoke>=2.2.0",
     "pre-commit>=4",
     "ruff==0.16.9",  # keep in sync with the ruff-pre-commit rev
