@@ -1,6 +1,6 @@
 [project]
 name = "fastapi-standalone-docs"
-version = "0.2.0"
+version = "0.3.0"
 description = "Host FastAPI Swagger UI and ReDoc without third party CDNs"
 readme = "README.md"
 license = "MIT"
