@@ -85,10 +85,13 @@ StandaloneDocs(
 ### Disclaimer
 
 **Note!** If you create multiple FastAPI apps in the same runtime (quite unlikely
-use-case), using StandaloneDocs on one of them will affect the other ones as well, as
-the library patches two of the shared functions (`get_swagger_ui_html` and
-`get_redoc_html`). Thus the library should not be used in a such setup unless all the
-apps will use StandaloneDocs with the same settings.
+use-case), for example by mounting one app inside another, using StandaloneDocs on one
+of them will affect the other ones as well, as the library patches two of the shared
+functions (`get_swagger_ui_html` and `get_redoc_html`). Thus, the library should not be
+used in such a setup unless all the apps will use StandaloneDocs with the same settings
+and the same `docs_url`, `redoc_url` and `openapi_url` on the FastAPI app itself. If any
+of those differ, only the app that called StandaloneDocs last will serve its docs
+correctly.
 
 ## Development
 
