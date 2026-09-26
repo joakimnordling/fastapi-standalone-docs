@@ -7,19 +7,19 @@ repos:
       - id: trailing-whitespace
         exclude: |
           (?x)(
-            ^fastapi_standalone_docs/static/.*$
+            ^src/fastapi_standalone_docs/static/.*$
           )
       - id: end-of-file-fixer
         exclude: |
           (?x)(
-            ^fastapi_standalone_docs/static/.*$
+            ^src/fastapi_standalone_docs/static/.*$
           )
       - id: check-yaml
       - id: check-toml
       - id: check-added-large-files
         exclude: |
           (?x)(
-            ^fastapi_standalone_docs/static/.*$
+            ^src/fastapi_standalone_docs/static/.*$
           )
       - id: check-merge-conflict
       - id: debug-statements
@@ -50,5 +50,5 @@ repos:
       - id: prettier
         exclude: |
           (?x)(
-            ^fastapi_standalone_docs/static/.*$
+            ^src/fastapi_standalone_docs/static/.*$
           )

@@ -126,9 +126,9 @@ uv add --editable ../fastapi-standalone-docs
 
 The code of this library itself is released under the [MIT license](./LICENSE). Please
 however note that this library also contains parts of
-[ReDoc](./fastapi_standalone_docs/static/redoc/), which is licensed under the
-[MIT license](./fastapi_standalone_docs/static/redoc/redoc.standalone.js.LICENSE.txt),
-[Swagger UI](./fastapi_standalone_docs/static/swagger/), which is licensed under the
-[Apache 2.0 License](./fastapi_standalone_docs/static/swagger/LICENSE), as well as parts
-of [FastAPI](./fastapi_standalone_docs/static/fastapi) (the favicon), which is licensed
-under the [MIT license](./fastapi_standalone_docs/static/fastapi/LICENSE).
+[ReDoc](./src/fastapi_standalone_docs/static/redoc/), which is licensed under the
+[MIT license](./src/fastapi_standalone_docs/static/redoc/redoc.standalone.js.LICENSE.txt),
+[Swagger UI](./src/fastapi_standalone_docs/static/swagger/), which is licensed under the
+[Apache 2.0 License](./src/fastapi_standalone_docs/static/swagger/LICENSE), as well as
+parts of [FastAPI](./src/fastapi_standalone_docs/static/fastapi) (the favicon), which is
+licensed under the [MIT license](./src/fastapi_standalone_docs/static/fastapi/LICENSE).
