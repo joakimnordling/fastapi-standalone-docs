@@ -38,6 +38,7 @@ build-backend = "uv_build"
 [tool.uv.build-backend]
 module-root = ""
 module-name = "fastapi_standalone_docs"
+wheel-exclude = ["tests/**"]
 
 [dependency-groups]
 dev = [
