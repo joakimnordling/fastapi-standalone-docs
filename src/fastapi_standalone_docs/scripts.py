@@ -9,14 +9,14 @@ FASTAPI_FILES = [
 ]
 
 SWAGGER_FILES = [
-    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.19.0/LICENSE",
-    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.19.0/swagger-ui.css",
-    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.19.0/swagger-ui-bundle.js",
+    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.33.0/LICENSE",
+    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.33.0/swagger-ui.css",
+    "https://cdn.jsdelivr.net/npm/swagger-ui-dist@5.33.0/swagger-ui-bundle.js",
 ]
 
 REDOC_FILES = [
-    "https://cdn.jsdelivr.net/npm/redoc@2.4.0/bundles/redoc.standalone.js.LICENSE.txt",
-    "https://cdn.jsdelivr.net/npm/redoc@2.4.0/bundles/redoc.standalone.js",
+    "https://cdn.jsdelivr.net/npm/redoc@2.5.4/bundles/redoc.standalone.js.LICENSE.txt",
+    "https://cdn.jsdelivr.net/npm/redoc@2.5.4/bundles/redoc.standalone.js",
     "https://cdn.redoc.ly/redoc/logo-mini.svg",
 ]
 
