@@ -1,7 +1,7 @@
 # FastAPI Standalone Docs
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ioxiocom/fastapi-standalone-docs/publish.yaml)](https://github.com/ioxiocom/fastapi-standalone-docs/actions/workflows/publish.yaml)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![PyPI](https://img.shields.io/pypi/v/fastapi-standalone-docs)](https://pypi.org/project/fastapi-standalone-docs/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/fastapi-standalone-docs)](https://pypi.org/project/fastapi-standalone-docs/)
 [![License: MIT](https://img.shields.io/pypi/l/fastapi-standalone-docs)](https://opensource.org/license/mit/)
@@ -94,32 +94,32 @@ apps will use StandaloneDocs with the same settings.
 
 PRs are welcome!
 
-This project is using [Poetry](https://python-poetry.org/) and
-[pre-commit](https://pre-commit.com/), so please ensure you've installed both. To set up
-the project with them run:
+This project is using [uv](https://docs.astral.sh/uv/), so please ensure you've
+[installed it](https://docs.astral.sh/uv/getting-started/installation/). To set up the
+project run:
 
 ```bash
-pre-commit install
-poetry install
+uv sync
+uv run pre-commit install
 ```
 
-Running tests locally:
+Running tests locally (pre-commit hooks, mypy, pytest and a dependency audit):
 
 ```bash
-poetry run invoke test
+uv run invoke test
 ```
 
 Updating the static files from the CDNs:
 
 ```bash
-poetry run update-fastapi-standalone-docs
+uv run update-fastapi-standalone-docs
 ```
 
 If you want to test using it locally in some other project, in that project run this
 (make sure to adjust the path to the local repo):
 
 ```bash
-poetry add ../fastapi-standalone-docs --editable
+uv add --editable ../fastapi-standalone-docs
 ```
 
 ## License

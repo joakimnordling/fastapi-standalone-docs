@@ -1,34 +1,71 @@
-[tool.poetry]
+[project]
 name = "fastapi-standalone-docs"
 version = "0.2.0"
 description = "Host FastAPI Swagger UI and ReDoc without third party CDNs"
-authors = ["IOXIO Ltd"]
-license = "MIT"
 readme = "README.md"
-repository = "https://github.com/ioxiocom/fastapi-standalone-docs"
-packages = [{include = "fastapi_standalone_docs"}]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "IOXIO Ltd" }]
+requires-python = ">=3.10"
+dependencies = ["fastapi>=0.109.1,<1"]
+keywords = ["fastapi", "swagger", "swagger-ui", "redoc", "openapi", "offline"]
+classifiers = [
+    "Framework :: FastAPI",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Documentation",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-fastapi = ">=0.109.1,<1"
+[project.urls]
+Homepage = "https://github.com/ioxiocom/fastapi-standalone-docs"
+Issues = "https://github.com/ioxiocom/fastapi-standalone-docs/issues"
 
-[tool.poetry.scripts]
-update-fastapi-standalone-docs = { callable = "fastapi_standalone_docs.scripts:update_docs", extras = ["scripts"] }
-
-[tool.poetry.extras]
-scripts = []
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.4"
-mypy = "^1.15.0"
-httpx = "^0.28.1"
-invoke = "^2.2.0"
-flake8 = "^7.1.2"
-
-[tool.skjold]
-report_only = false
-sources = ["pyup", "gemnasium"]
+[project.scripts]
+update-fastapi-standalone-docs = "fastapi_standalone_docs.scripts:update_docs"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.12,<0.13"]
+build-backend = "uv_build"
+
+# The package lives in the repository root, not in src/.
+[tool.uv.build-backend]
+module-root = ""
+module-name = "fastapi_standalone_docs"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "mypy>=1.15.0",
+    "httpx>=0.28.1",
+    "invoke>=2.2.0",
+    "pre-commit>=4",
+    "ruff==0.16.8",  # keep in sync with the ruff-pre-commit rev
+]
+
+[tool.uv]
+required-version = ">=0.12"
+
+[tool.pytest.ini_options]
+testpaths = ["fastapi_standalone_docs/tests"]
+addopts = ["-v"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.mypy]
+files = ["fastapi_standalone_docs"]
+warn_return_any = true
+ignore_missing_imports = true
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+# E/W: pycodestyle; F: Pyflakes; I: isort; UP: pyupgrade; B: flake8-bugbear;
+# SIM: flake8-simplify; RUF: Ruff-specific rules
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]

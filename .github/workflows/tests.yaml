@@ -15,16 +15,14 @@ jobs:
       - name: Checkout 🔁
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Set up Python ${{ matrix.python-version }} 🐍
-        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
+      - name: Set up uv and Python ${{ matrix.python-version }} 🐍
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Install Poetry and pre-commit ⚙️
-        run: pip install poetry==2.2.1 pre-commit
+          cache-suffix: test-${{ matrix.python-version }}
 
       - name: Install dependencies 🛠
-        run: poetry install
+        run: uv sync --locked
 
       - name: Run tests 🚦
-        run: poetry run invoke test
+        run: uv run invoke test

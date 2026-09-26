@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Optional
 
 from fastapi import FastAPI, applications
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
@@ -13,8 +12,8 @@ class StandaloneDocs:
         self,
         app: FastAPI,
         with_google_fonts: bool = False,
-        swagger_favicon_url: Optional[str] = None,
-        redoc_favicon_url: Optional[str] = None,
+        swagger_favicon_url: str | None = None,
+        redoc_favicon_url: str | None = None,
     ):
         self.app = app
         self.with_google_fonts = with_google_fonts
@@ -23,7 +22,7 @@ class StandaloneDocs:
         self.patch_swagger(swagger_favicon_url)
         self.patch_redoc(redoc_favicon_url)
 
-    def patch_swagger(self, swagger_favicon_url: Optional[str]):
+    def patch_swagger(self, swagger_favicon_url: str | None):
         if self.app.openapi_url and self.app.docs_url:
             if not swagger_favicon_url:
                 swagger_favicon_url = self.app.docs_url + "/fastapi/favicon.png"
@@ -48,7 +47,7 @@ class StandaloneDocs:
 
             applications.get_swagger_ui_html = patched_get_swagger_ui_html
 
-    def patch_redoc(self, redoc_favicon_url: Optional[str]):
+    def patch_redoc(self, redoc_favicon_url: str | None):
         if self.app.openapi_url and self.app.redoc_url:
             if not redoc_favicon_url:
                 redoc_favicon_url = self.app.redoc_url + "/fastapi/favicon.png"

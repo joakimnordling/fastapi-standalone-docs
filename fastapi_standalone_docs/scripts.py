@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import List
 from urllib.request import urlretrieve
 
 import fastapi_standalone_docs
@@ -39,7 +38,7 @@ def update_docs():
     patch_redoc_logo(target=static_path / "redoc")
 
 
-def download_files(destination: Path, urls: List[str]) -> None:
+def download_files(destination: Path, urls: list[str]) -> None:
     for url in urls:
         filename = url.split("/")[-1]
         urlretrieve(url, destination / filename)
