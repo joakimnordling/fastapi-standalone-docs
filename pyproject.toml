@@ -40,11 +40,11 @@ source-include = ["tests/**"]
 [dependency-groups]
 dev = [
     "pytest>=9.1.1",
-    "mypy>=2.3.1",
+    "mypy>=2.4.0",
     "httpx2>=2.13.1",
     "invoke>=3.0.3",
     "pre-commit>=4.6.2",
-    "ruff==0.16.9",  # keep in sync with the ruff-pre-commit rev
+    "ruff==0.16.10",  # keep in sync with the ruff-pre-commit rev
 ]
 
 [tool.uv]
