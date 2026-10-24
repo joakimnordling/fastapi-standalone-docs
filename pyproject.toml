@@ -41,10 +41,10 @@ source-include = ["tests/**"]
 dev = [
     "pytest>=9.1.1",
     "mypy>=2.4.0",
-    "httpx2>=2.13.1",
+    "httpx2>=2.16.0",
     "invoke>=3.0.3",
-    "pre-commit>=4.6.2",
-    "ruff==0.17.0",  # keep in sync with the ruff-pre-commit rev
+    "pre-commit>=4.7.0",
+    "ruff==0.17.2",  # keep in sync with the ruff-pre-commit rev
 ]
 
 [tool.uv]
